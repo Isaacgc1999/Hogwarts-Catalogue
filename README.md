@@ -1,38 +1,67 @@
-# Hogwarts-Catalogue
-A simple Harry Potter Franchise Film catalogue
+# Hogwarts (Harry Potter Franchise) Catalogue App
+
+Welcome to the **Hogwarts Catalogue App**! 🧙‍♂️✨ This application is designed to showcase all the magical elements of the Harry Potter universe, including movies, characters, spells, and more.
+
+## 📜 Features
+
+- 📽️ **Movie Catalogue** – Browse through all the Harry Potter films.
+- 🧙 **Character Directory** – Explore detailed profiles of beloved characters.
+- 🔮 **Spell List** – Discover spells and their effects.
+- 📚 **House Sorting** – Learn about Hogwarts houses and their members.
+
+## 🏗️ Technologies Used
+
+- **Angular** – Frontend framework for building the UI.
+- **TypeScript** – Enhances JavaScript with strong typing.
+- **SASS** – Styling with modular and reusable CSS.
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+Ensure you have the following installed:
+
+- [Node.js](https://nodejs.org/)
+- [Angular CLI](https://angular.io/cli)
+
+### Installation
+
+1. Clone the repository:
+
+   ```sh
+   git clone https://github.com/your-username/hogwarts-catalogue.git
+   cd hogwarts-catalogue
+   ```
+
+2. Install dependencies:
+
+   ```sh
+   npm install
+   ```
+
+3. Run the development server:
+
+   ```sh
+   ng serve
+   ```
+
+   Open [http://localhost:4200](http://localhost:4200) in your browser.
+
+## 📸 Screenshots
+
+*(Add some images of your app UI here)*
+
+## 🤝 Contributing
+
+Pull requests are welcome! If you have suggestions, feel free to open an issue or fork the project.
+
+## 📜 License
+
+This project is licensed under the MIT License.
+
 ---
-difficulty: 1
-training: true
-chapter: "Chapter 2: Angular Components"
-tags: angular
----
 
-# Create a Component Driven by Inputs
+✨ **"Happiness can be found even in the darkest of times, if one only remembers to turn on the light."** – Albus Dumbledore ✨
 
-# Challenge Description
-In this challenge, let's create a movie item component that receives `Movie` information as an input.
+🧙 ALWAYS 🧙
 
-## Requirements
-- Open `src/movie-item/movie-item.component.ts`
-- Add a required input of type `Movie` (see sample movie provided in `src/app.component.ts`)
-- Update the provided HTML template to render the movie:
-  - Title
-  - Release date (no formatting needed)
-  - Budget ($ {value} million - for instance: $ 50 million)
-  - Duration ({value} min - for instance: 152 min)
-- Update `src/app.component.html` to pass the sample `movie` as an input
-- Ensure your component is displayed properly on the screen
-
-> 💡 HINT: Review our self-study content if you get stuck at any step
-
-
-## Other Considerations
-
-- If you see the `data-test` attribute anywhere in the boilerplate don't remove it.
-- Mini.css is preinstalled with the default config. It might be helpful for you, if you want to have some styles. (Not required)
-
-## Example of Finished Component
-
-This is an example of what the functionality should look like for the completed exercise. If you’d like to mimic this style, feel free to do so, but it is not required.
-
-![Finished app in this challenge](https://images.certificates.dev/chapter11-screenshot.png)
