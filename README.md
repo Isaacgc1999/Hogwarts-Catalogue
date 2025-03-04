@@ -9,11 +9,11 @@ In this challenge, we display multiple instances of our `MovieItemComponent`.
 - Use the @for block to repeat `MovieItemComponent` as many times as needed
 
   ## Finished Steps
-- Movie Service injection into AppComponent.
-- Creation of a new field "movies" of type signal that receives the contents of the service.
-- Movies catalogue sent through Input method to the Item component.
-- Iteration and management of the information by receiving all the information.
-- Movie's list display.
+- Injected the MovieService into the AppComponent.
+- Created a new movies field of type signal to store data from the service.
+- Passed the movie catalog to the ItemComponent via the @Input() property.
+- Iterated and processed the received movie data efficiently.
+- Displayed the list of movies.
 
 ## Example of Finished Application
 
