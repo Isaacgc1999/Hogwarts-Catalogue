@@ -2,13 +2,35 @@ h4 {
   margin-left: 0;
   margin-bottom: 0;
 }
-
-.subtitle {
+.movie-list{
   display: flex;
-  gap: 1rem;
+  flex-direction: column;
+  
+  .movie-item {
+    display: flex;
+    justify-content: space-between;
+    
+    padding: 0.8rem;
+    
+    &__body{
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      align-items: flex-start;
+      gap: 0.4rem; 
+      
+      
+      &__subtitle {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+    }
+    &__details{
+      display: flex;
+      justify-content: center;
+    }
+    
+  }
 }
 
-.movie-item {
-  display: flex;
-  justify-content: space-between;
-}

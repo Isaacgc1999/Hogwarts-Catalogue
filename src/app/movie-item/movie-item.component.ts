@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Signal } from '@angular/core';
 import { Movie } from '../model/movie.model';
 import { MoneyPipe } from '../pipes/moneyPipe/money.pipe';
 import { DurationPipe } from '../pipes/durationPipe/duration.pipe';
@@ -13,6 +13,6 @@ import { DurationPipe } from '../pipes/durationPipe/duration.pipe';
 })
 export class MovieItemComponent {
 
-  @Input() movie: Movie;
+  @Input() movies: Signal<Movie[]>;
 }
 
