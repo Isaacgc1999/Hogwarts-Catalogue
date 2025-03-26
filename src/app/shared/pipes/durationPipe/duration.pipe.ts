@@ -13,6 +13,6 @@ export class DurationPipe implements PipeTransform {
     value = value - (hours*60);
     minutes = value;
 
-    return hours + 'h ' + minutes + 'min ';
+    return hours + 'h ' + minutes + ' min';
   }
 }

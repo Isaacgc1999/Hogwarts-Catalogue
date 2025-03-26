@@ -1,0 +1,17 @@
+<div class="movie-list">
+    @for(movie of movies(); track movie.id) {
+        <div class="movie-item" [appHighlight]="'highlight'">
+            <div class="movie-item__body">
+                <h4>{{ movie.title }}</h4>
+                <small class="movie-item__body__subtitle">
+                    <span>Release date: {{ movie.release_date }}</span>
+                    <span>Budget: {{ movie.budget | moneyPipe }}</span>
+                    <span>Duration: {{ movie.duration | durationPipe }}</span>
+                </small>
+            </div>
+            <div class="movie-item__details">
+                <button>Details</button>
+            </div>
+        </div>
+    }
+</div>
