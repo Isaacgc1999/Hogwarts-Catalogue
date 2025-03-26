@@ -1,38 +1,28 @@
-# Hogwarts-Catalogue
-A simple Harry Potter Franchise Film catalogue
----
-difficulty: 1
-training: true
-chapter: "Chapter 2: Angular Components"
-tags: angular
----
+# Create Pipes to Improve Budget and Duration Formatting
 
-# Create a Component Driven by Inputs
-
-# Challenge Description
-In this challenge, let's create a movie item component that receives `Movie` information as an input.
+## Challenge Description
+In this challenge, we want to display movie budgets as follows using a custom pipe:
+- If the budget is "175", render it as "$175 million"
+- If the budget is a range such as "175-200", render it as "$175 to $200 million"
+We also want to create another custom pipe to format the movie duration so that "92" is displayed as "1h 32min".
 
 ## Requirements
-- Open `src/movie-item/movie-item.component.ts`
-- Add a required input of type `Movie` (see sample movie provided in `src/app.component.ts`)
-- Update the provided HTML template to render the movie:
-  - Title
-  - Release date (no formatting needed)
-  - Budget ($ {value} million - for instance: $ 50 million)
-  - Duration ({value} min - for instance: 152 min)
-- Update `src/app.component.html` to pass the sample `movie` as an input
-- Ensure your component is displayed properly on the screen
+- Edit the provided `src/pipes/money.pipe.ts`
+- Implement the `transform` method to format input values as defined in the challenge description:
+   - If the budget is "175", render it as "$175 million"
+   - If the budget is a range such as "175-200", render it as "$175 to $200 million"
+- Add your pipe to the template of `movie-item.component.ts` and ensure the movie budgets are displayed as required.
+- Edit the provided `src/pipes/duration.pipe.ts`
+- Implement the `transform` method to format input values as defined in the challenge description:
+   - "92" must be displayed as "1h 32min"
+- Add your pipe to the template of `movie-item.component.ts` and ensure the movie durations are displayed as required.
 
-> 💡 HINT: Review our self-study content if you get stuck at any step
+## Finished Steps
+- Edited `money.pipe.ts` to format the movie budget as "$175 million" or "$175 to $200 million".
+- Edited `duration.pipe.ts` to convert minutes into a formatted duration, e.g., "1h 32min".
+- Applied the pipes in the `movie-item.component.ts` template to display the correctly formatted budget and duration.
+- Verified that movie budgets and durations are displayed as required.
 
+## Example of Finished Application
 
-## Other Considerations
-
-- If you see the `data-test` attribute anywhere in the boilerplate don't remove it.
-- Mini.css is preinstalled with the default config. It might be helpful for you, if you want to have some styles. (Not required)
-
-## Example of Finished Component
-
-This is an example of what the functionality should look like for the completed exercise. If you’d like to mimic this style, feel free to do so, but it is not required.
-
-![Finished app in this challenge](https://images.certificates.dev/chapter11-screenshot.png)
+![Finished app in this challenge](https://images.certificates.dev/chapter42-screenshot.png)
