@@ -1,38 +1,23 @@
-# Hogwarts-Catalogue
-A simple Harry Potter Franchise Film catalogue
----
-difficulty: 1
-training: true
-chapter: "Chapter 2: Angular Components"
-tags: angular
----
+# Highlight a Specific Movie in the List on Mouse Over
 
-# Create a Component Driven by Inputs
-
-# Challenge Description
-In this challenge, let's create a movie item component that receives `Movie` information as an input.
+## Challenge Description
+In this challenge, we want to highlight movies on mouse over by changing their background color to `gold`.  
+We want to use a custom directive to do so.
 
 ## Requirements
-- Open `src/movie-item/movie-item.component.ts`
-- Add a required input of type `Movie` (see sample movie provided in `src/app.component.ts`)
-- Update the provided HTML template to render the movie:
-  - Title
-  - Release date (no formatting needed)
-  - Budget ($ {value} million - for instance: $ 50 million)
-  - Duration ({value} min - for instance: 152 min)
-- Update `src/app.component.html` to pass the sample `movie` as an input
-- Ensure your component is displayed properly on the screen
+- Edit the provided `src/highlight.directive.ts`
+- Add a way for the directive to add the CSS class `highlight` to its host element on mouse over (such CSS class is already defined in `styles.css`).
+  > 💡 **Hint**: Review our self-study content on host bindings and host listeners.
+- Add a way for the directive to remove the CSS class `highlight` from its host element on mouse out.
+- Apply the directive on your `MovieItemComponent`.
 
-> 💡 HINT: Review our self-study content if you get stuck at any step
+## Finished Steps
+- Edited the `highlight.directive.ts` to include mouse enter and leave event listeners.
+- Implemented functionality to add the `highlight` class on mouse over.
+- Implemented functionality to remove the `highlight` class on mouse out.
+- Applied the `appHighlight` directive to the `MovieItemComponent` template.
+- Verified that movie items highlight appropriately on mouse hover.
 
+## Example of Finished Application
 
-## Other Considerations
-
-- If you see the `data-test` attribute anywhere in the boilerplate don't remove it.
-- Mini.css is preinstalled with the default config. It might be helpful for you, if you want to have some styles. (Not required)
-
-## Example of Finished Component
-
-This is an example of what the functionality should look like for the completed exercise. If you’d like to mimic this style, feel free to do so, but it is not required.
-
-![Finished app in this challenge](https://images.certificates.dev/chapter11-screenshot.png)
+![Finished app in this challenge](https://images.certificates.dev/chapter41-screenshot.gif)
