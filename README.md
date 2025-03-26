@@ -15,6 +15,9 @@ Welcome to the **Hogwarts Catalogue App**! 🧙‍♂️✨ This application is 
 - **TypeScript** – Enhances JavaScript with strong typing.
 - **SASS** – Styling with modular and reusable CSS.
 
+## ⚡ LINK TO STACKBLITZ (PLAYGROUND)
+https://stackblitz.com/~/github.com/Isaacgc1999/Hogwarts-Catalogue
+
 ## 🚀 Getting Started
 
 ### Prerequisites
