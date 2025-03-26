@@ -7,7 +7,6 @@ We want to use a custom directive to do so.
 ## Requirements
 - Edit the provided `src/highlight.directive.ts`
 - Add a way for the directive to add the CSS class `highlight` to its host element on mouse over (such CSS class is already defined in `styles.css`).
-  > 💡 **Hint**: Review our self-study content on host bindings and host listeners.
 - Add a way for the directive to remove the CSS class `highlight` from its host element on mouse out.
 - Apply the directive on your `MovieItemComponent`.
 
