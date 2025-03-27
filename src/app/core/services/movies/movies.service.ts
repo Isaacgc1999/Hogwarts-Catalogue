@@ -1,7 +1,7 @@
 import {inject, Injectable, Signal} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import {toSignal} from '@angular/core/rxjs-interop';
-import { Movie } from '../models/movie.model';
+import { Movie } from '../../models/movie.model';
 
 @Injectable({
   providedIn: 'root'

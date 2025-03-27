@@ -1,6 +1,12 @@
 h4 {
   margin-left: 0;
   margin-bottom: 0;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  fa-icon{
+    cursor: pointer;
+  }
 }
 .movie-list{
   display: flex;

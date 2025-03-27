@@ -1,7 +1,7 @@
 import { Component, Signal } from '@angular/core';
 import { MovieItemComponent } from './features/movie-item/movie-item.component';
 import { Movie } from './core/models/movie.model';
-import { MoviesService } from './core/services/movies.service';
+import { MoviesService } from './core/services/movies/movies.service';
 
 
 @Component({
