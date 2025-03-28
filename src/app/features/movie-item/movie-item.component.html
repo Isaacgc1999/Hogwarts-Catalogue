@@ -7,7 +7,7 @@
                         [icon]="isFavorite(movie.id) ? faStarSolid : faStarRegular"
                         (click)="toggleFavorite(movie)"
                     ></fa-icon>
-                    <h4>{{ movie.title }}</h4>
+                    {{ movie.title }}
                 </div>
                 <small class="movie-item__body__subtitle">
                     <span>Release date: {{ movie.release_date }}</span>
