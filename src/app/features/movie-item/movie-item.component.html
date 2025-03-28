@@ -2,7 +2,13 @@
     @for(movie of movies(); track movie.id) {
         <div class="movie-item" [appHighlight]="'highlight'">
             <div class="movie-item__body">
-                <h4><fa-icon [icon]="faStar"></fa-icon>{{ movie.title }}</h4>
+                <div class="movie-item__body__title">
+                    <fa-icon
+                        [icon]="isFavorite(movie.id) ? faStarSolid : faStarRegular"
+                        (click)="toggleFavorite(movie)"
+                    ></fa-icon>
+                    <h4>{{ movie.title }}</h4>
+                </div>
                 <small class="movie-item__body__subtitle">
                     <span>Release date: {{ movie.release_date }}</span>
                     <span>Budget: {{ movie.budget | moneyPipe }}</span>

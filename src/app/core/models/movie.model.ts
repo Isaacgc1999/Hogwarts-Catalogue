@@ -3,7 +3,8 @@ export interface Movie {
   title: string,
   duration: number,
   budget: number,
-  release_date: string
+  release_date: string,
+  isFav: boolean
 }
 
 export interface MovieDetails extends Movie {
