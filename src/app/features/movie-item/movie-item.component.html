@@ -2,10 +2,6 @@
         <div class="movie-item" [appHighlight]="'highlight'">
             <div class="movie-item__body">
                 <div class="movie-item__body__title">
-                    <!-- <fa-icon
-                        [icon]="isFavorite(movie.id) ? faStarSolid : faStarRegular"
-                        (click)="toggleFavorite(movie)"
-                    ></fa-icon> -->
                     <fa-icon (click)="onToggleFavorite()" [class.active]="favorite"
                         [icon]= "favorite ? faStarSolid : faStarRegular">
                     </fa-icon>
