@@ -1,38 +1,56 @@
-# Hogwarts-Catalogue
-A simple Harry Potter Franchise Film catalogue
----
-difficulty: 1
-training: true
-chapter: "Chapter 2: Angular Components"
-tags: angular
----
+# Use a Service to Manage Favorite Movies
 
-# Create a Component Driven by Inputs
+## Challenge Description
 
-# Challenge Description
-In this challenge, let's create a movie item component that receives `Movie` information as an input.
+In this challenge, I'll enhance the application by implementing functionality to manage favorite movies. The desired features include:
+
+- **Adding a Favorite:** Click on a "star" icon (☆) to mark a movie as a favorite.
+- **Displaying Favorites:** Highlight favorite movies by displaying their "star" icon coloured (⭐).
+- **Removing a Favorite:** Click the "star" icon (⭐) again to remove a movie from the favorites list.
 
 ## Requirements
-- Open `src/movie-item/movie-item.component.ts`
-- Add a required input of type `Movie` (see sample movie provided in `src/app.component.ts`)
-- Update the provided HTML template to render the movie:
-  - Title
-  - Release date (no formatting needed)
-  - Budget ($ {value} million - for instance: $ 50 million)
-  - Duration ({value} min - for instance: 152 min)
-- Update `src/app.component.html` to pass the sample `movie` as an input
-- Ensure your component is displayed properly on the screen
 
-> 💡 HINT: Review our self-study content if you get stuck at any step
+To achieve the above functionality, follow these steps:
+
+1. **Create the `favorites.service.ts` File:**
+   - Store the list of current favorite movies using localStorage.
+   - **Implement `setFavorite` and `deleteFavorite` Method:** Create a method to add and remove a movie from the favorites list.
+
+2. **Implement `isFavorite(movie)` Method:**
+   - This method should return a boolean indicating whether a given movie is in the favorites list.
+
+3. **Update `movie-item.component.ts`:**
+   - Add necessary actions to:
+     - Pass information about a movie's favorite status.
+     - Emit an event when the "star" icon is clicked.
+   - **CSS Class:** Use the `active` CSS class to change the "star" icon from ☆ to ⭐ when a movie is marked as a favorite, and remove the class to revert the icon.
+
+4. **Modify `app.component.ts`:**
+   - Handle interactions with `favorites.service.ts`.
+   - Pass favorite status information to `movie-item.component.ts`.
 
 
-## Other Considerations
+## Finished Steps
+- **Persistent Storage:**  
+  The system leverages the browser's `localStorage` to store the list of favorite movies, ensuring that the favorite status persists across user sessions.
 
-- If you see the `data-test` attribute anywhere in the boilerplate don't remove it.
-- Mini.css is preinstalled with the default config. It might be helpful for you, if you want to have some styles. (Not required)
+- **Addition and Removal of Favorites:**  
+  A toggle functionality is provided—clicking on the star icon will add a movie to the favorites list if it's not already marked as a favorite, or remove it if it is.
 
-## Example of Finished Component
+- **Favorite Status Verification:**  
+  A dedicated method checks whether a given movie is in the favorites list, allowing the UI to display the correct star icon based on its status.
 
-This is an example of what the functionality should look like for the completed exercise. If you’d like to mimic this style, feel free to do so, but it is not required.
+- **Interactive UI with Dynamic Icons:**  
+  FontAwesome icons are used to represent the favorite state:
+  - An outlined star (☆) indicates a non-favorite movie.
+  - A filled star (⭐) signifies that the movie is marked as a favorite.
+  This dynamic visual feedback is triggered immediately upon user interaction.
 
-![Finished app in this challenge](https://images.certificates.dev/chapter11-screenshot.png)
+- **Reactive Data Binding:**  
+  By employing Angular's Signals, the system ensures that any change in the favorites list is automatically and efficiently reflected in the UI, providing a seamless user experience.
+
+## Example of Finished Application
+
+For reference, here's an example demonstrating the expected functionality upon completing this challenge:
+
+![Finished app in this challenge](https://images.certificates.dev/chapter51-screenshot.gif)
