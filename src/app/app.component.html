@@ -1,3 +1,9 @@
 <div class="container">
-  <app-movie-item [movies]="movies" />
+  <ng-container *ngFor="let movie of movies()">
+    <app-movie-item 
+      [movie]="movie" 
+      [favorite]="favoritesService.isFavorite(movie)"
+      (toggleFavorite)="handleToggleFavorite($event)">
+    </app-movie-item>
+  </ng-container>
 </div>

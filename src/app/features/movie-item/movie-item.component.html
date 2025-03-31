@@ -1,12 +1,14 @@
 <div class="movie-list">
-    @for(movie of movies(); track movie.id) {
         <div class="movie-item" [appHighlight]="'highlight'">
             <div class="movie-item__body">
                 <div class="movie-item__body__title">
-                    <fa-icon
+                    <!-- <fa-icon
                         [icon]="isFavorite(movie.id) ? faStarSolid : faStarRegular"
                         (click)="toggleFavorite(movie)"
-                    ></fa-icon>
+                    ></fa-icon> -->
+                    <fa-icon (click)="onToggleFavorite()" [class.active]="favorite"
+                        [icon]= "favorite ? faStarSolid : faStarRegular">
+                    </fa-icon>
                     {{ movie.title }}
                 </div>
                 <small class="movie-item__body__subtitle">
@@ -19,5 +21,4 @@
                 <button>Details</button>
             </div>
         </div>
-    }
 </div>
