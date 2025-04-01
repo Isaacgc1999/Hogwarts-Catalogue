@@ -1,0 +1,65 @@
+<link rel="preconnect" href="https://www.wizardingworld.com">
+
+<div class="details">
+    @defer(on timer(1s)){
+        <div class="details__top">
+            <div class="details__top__return">
+                <button routerLink="/">Return</button>
+            </div>
+            <h1 class="details__top__title">{{ movie()?.title }}</h1>
+        </div>
+        
+        <div class="details__bottom">
+            @if (movie()?.poster) {
+                <img class="details__bottom__poster" [ngSrc]="movie()?.poster || ''" priority width="498" height="664.5" alt="Poster">
+            }
+            <div class="details__bottom__summary">
+                <p class="details__bottom__summary__text">
+                    <span><b>Summary: </b></span>
+                    <span>{{ movie()?.summary }}</span>
+                </p>
+                <table class="details__bottom__summary__detail-section">
+                    <span><b>Details</b></span>
+                    <thead>
+                        <tr>
+                        <th>Box office</th>
+                        <th>Budget</th>
+                        <th>Duration</th>
+                        <th>Producers</th>
+                        <th>Cinematographers</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                        <td data-label="Box office">{{ (movie()?.box_office || 0) | moneyPipe }}</td>
+                        <td data-label="Budget">{{ (movie()?.budget || 0) | moneyPipe }}</td>
+                        <td data-label="Duration">{{ (movie()?.duration || 0) | durationPipe }}</td>
+                        <td data-label="Producers">{{ movie()?.producers?.join(', ') }}</td>
+                        <td data-label="Cinematographers">{{ movie()?.cinematographers?.join(', ') }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    }
+    @placeholder {
+        <div class="skelleton__top">
+            <div class="skelleton__top__return">
+            </div>
+            <h1 class="skelleton__top__title"></h1>
+        </div>
+        
+        <div class="skelleton__bottom">
+            <img class="skelleton__bottom__poster">
+            <div class="skelleton__bottom__summary">
+                <p class="skelleton__bottom__summary__text">
+                </p>
+                <p class="skelleton__bottom__summary__detail-section">
+                </p>
+            </div>
+        </div>
+    }
+    @error {
+        <p>Error loading the data.</p>
+    }
+</div>

@@ -1,0 +1,127 @@
+.details {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    overflow: hidden;
+
+    &__top{
+        display: flex;
+        width: 100%;
+
+        &__return{
+            display: flex;
+            width: 10%;
+        }
+
+        &__title{
+            display: flex;
+            width: 90%;
+            justify-content: center;
+        }
+    }
+
+    &__bottom{
+        display: flex;
+        justify-content: space-between;
+
+        &__summary{
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+
+            &__text{
+                display: flex;
+                text-align: justify;
+                flex-direction: column;
+                width: 65%;
+                gap: 1rem;
+            }
+
+            &__detail-section{
+                display: flex;
+                width: 66%;
+                gap: 1rem;
+                overflow-x: hidden;
+            }
+        }
+    }
+}
+
+.skelleton{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    &__top{
+        display: flex;
+        width: 100%;
+
+        &__return{
+            display: flex;
+            width: 72.16px;
+            height: 46.5px;
+            border-radius: 10px;
+            
+        }
+
+        &__title{
+            display: flex;
+            width: 90%;
+            height: 46.5px;
+            background-color: #d5d4d4;
+            border-radius: 10px;
+            animation: pulse 0.8s infinite ease-in-out;
+        }
+    }
+
+    &__bottom{
+        display: flex;
+        padding-left: 43.5px;
+        padding-top: 38.832px;
+        gap: 2rem;
+
+        &__poster{
+            width: 410.5px;
+            height: 553px; 
+            background-color: #d5d4d4;
+            border-radius: 10px;
+            
+            animation: pulse 0.8s infinite ease-in-out;
+        }
+        &__summary{
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+
+            &__text{
+                display: flex;
+                width: 933.65px;
+                height: 120px;
+                background-color: #d5d4d4;
+                border-radius: 10px;
+                animation: pulse 0.8s infinite ease-in-out;
+            }
+
+            &__detail-section{
+                display: flex;
+                width: 933.65px;
+                height: 120px;
+                background-color: #d5d4d4;
+                border-radius: 10px;
+                animation: pulse 0.8s infinite ease-in-out;
+            }
+        }
+    }
+}
+
+@keyframes pulse {
+0% {
+    opacity: 0.6;
+}
+50% {
+    opacity: 1;
+}
+100% {
+    opacity: 0.6;
+}
+}
