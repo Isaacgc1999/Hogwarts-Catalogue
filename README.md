@@ -1,56 +1,49 @@
-# Use a Service to Manage Favorite Movies
+# Use the Router to Display Movie Details
 
 ## Challenge Description
 
-In this challenge, I'll enhance the application by implementing functionality to manage favorite movies. The desired features include:
+In this challenge, I'll enhance the application by implementing navigation to display movie details. The desired features include:
 
-- **Adding a Favorite:** Click on a "star" icon (☆) to mark a movie as a favorite.
-- **Displaying Favorites:** Highlight favorite movies by displaying their "star" icon coloured (⭐).
-- **Removing a Favorite:** Click the "star" icon (⭐) again to remove a movie from the favorites list.
+- **Navigating to Movie Details:** Clicking on a "Details" button should take the user to a dedicated page showing information about the selected movie.
+- **Using Lazy-Loading:** The details page should be loaded dynamically when needed, optimizing performance.
 
 ## Requirements
 
 To achieve the above functionality, follow these steps:
 
-1. **Create the `favorites.service.ts` File:**
-   - Store the list of current favorite movies using localStorage.
-   - **Implement `setFavorite` and `deleteFavorite` Method:** Create a method to add and remove a movie from the favorites list.
+1. **Modify `home.component.ts`:**
+   - Set `HomeComponent` as the new landing page displaying the list of movies.
 
-2. **Implement `isFavorite(movie)` Method:**
-   - This method should return a boolean indicating whether a given movie is in the favorites list.
+2. **Update `app.component.ts`:**
+   - Ensure that the component only contains a `<router-outlet />` so the entire application is controlled via the router.
 
-3. **Update `movie-item.component.ts`:**
-   - Add necessary actions to:
-     - Pass information about a movie's favorite status.
-     - Emit an event when the "star" icon is clicked.
-   - **CSS Class:** Use the `active` CSS class to change the "star" icon from ☆ to ⭐ when a movie is marked as a favorite, and remove the class to revert the icon.
+3. **Configure Routing in `app.routes.ts`:**
+   - Add a default route (`""`) that directs to `HomeComponent`.
+   - Add a route (`"details/:id"`) that lazy-loads `MovieDetailsComponent` to display individual movie details.
 
-4. **Modify `app.component.ts`:**
-   - Handle interactions with `favorites.service.ts`.
-   - Pass favorite status information to `movie-item.component.ts`.
+4. **Modify `MovieItemComponent`:**
+   - Update the "Details" button to use `routerLink` for navigation to the corresponding movie details page.
 
+## Other Considerations
+
+- **Do not remove `data-test` attributes** if they appear in the boilerplate, as they may be used for automated testing.
 
 ## Finished Steps
-- **Persistent Storage:**  
-  The system leverages the browser's `localStorage` to store the list of favorite movies, ensuring that the favorite status persists across user sessions.
 
-- **Addition and Removal of Favorites:**  
-  A toggle functionality is provided—clicking on the star icon will add a movie to the favorites list if it's not already marked as a favorite, or remove it if it is.
+- **Routing Implementation:**  
+  The application is now fully controlled by Angular Router, using a `<router-outlet />` for dynamic navigation.
 
-- **Favorite Status Verification:**  
-  A dedicated method checks whether a given movie is in the favorites list, allowing the UI to display the correct star icon based on its status.
+- **Lazy-Loading Optimization:**  
+  The `MovieDetailsComponent` is loaded only when required, reducing the initial bundle size and improving performance.
 
-- **Interactive UI with Dynamic Icons:**  
-  FontAwesome icons are used to represent the favorite state:
-  - An outlined star (☆) indicates a non-favorite movie.
-  - A filled star (⭐) signifies that the movie is marked as a favorite.
-  This dynamic visual feedback is triggered immediately upon user interaction.
+- **Navigation to Details Page:**  
+  Clicking on the "Details" button seamlessly navigates to the corresponding movie details page using `routerLink`.
 
-- **Reactive Data Binding:**  
-  By employing Angular's Signals, the system ensures that any change in the favorites list is automatically and efficiently reflected in the UI, providing a seamless user experience.
+- **Dynamic URL Handling:**  
+  The route parameter (`:id`) ensures that the correct movie data is displayed based on the selected movie.
 
 ## Example of Finished Application
 
 For reference, here's an example demonstrating the expected functionality upon completing this challenge:
 
-![Finished app in this challenge](https://images.certificates.dev/chapter51-screenshot.gif)
+![Finished app in this challenge](https://images.certificates.dev/chapter61-screenshot.gif)
