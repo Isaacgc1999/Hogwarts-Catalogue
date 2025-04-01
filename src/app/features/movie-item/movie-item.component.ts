@@ -8,6 +8,7 @@ import { faStar as faStarSolid } from '@fortawesome/free-solid-svg-icons';
 import { faStar as faStarRegular } from '@fortawesome/free-regular-svg-icons';
 import { CommonModule } from '@angular/common';
 import { FavoritesService } from '../../core/services/favorites/favorites.service';
+import { Router, RouterLink } from '@angular/router';
 
 
 
@@ -30,8 +31,14 @@ export class MovieItemComponent {
   @Input() favorite: boolean = false;
   @Output() toggleFavorite = new EventEmitter<Movie>();
 
+  constructor(private router: Router){}
+
   onToggleFavorite(): void {
     this.toggleFavorite.emit(this.movie);
+  }
+
+  navigateToDetails(movieId: string): void {
+    this.router.navigate(['/movie-details', movieId]);
   }
 }
 
